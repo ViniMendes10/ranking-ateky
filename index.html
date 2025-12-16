@@ -151,7 +151,7 @@ header h1{
 }
 
 .points-left{
-  display:none;
+  display:block;
   font-size:18px;
   font-weight:900;
   color:var(--blue-neon);
@@ -409,6 +409,21 @@ header h1{
 /* Garantia extra */
 .public-view .rank-box {
   opacity: 1;
+}
+/* =============================
+   🎯 CONTROLE DE VISIBILIDADE
+============================= */
+
+/* 🔹 MODO NORMAL (EDIÇÃO LOCAL)
+   Esconde pontos, mostra input */
+body:not(.presentation-mode):not(.public-view) .points-left {
+  display: none;
+}
+
+/* 🔹 INPUT APENAS NO MODO EDIÇÃO */
+.public-view input.points,
+.presentation-mode input.points {
+  display: none;
 }
 
 
