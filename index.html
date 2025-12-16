@@ -392,6 +392,14 @@ header h1{
 .public-view .container {
   pointer-events: auto; /* mantém scroll */
 }
+/* 🔒 VISUALIZAÇÃO PÚBLICA (GitHub Pages) */
+.readonly .points-left {
+  display: block;
+}
+
+.readonly input.points {
+  display: none;
+}
 
 
 </style>
@@ -531,6 +539,10 @@ if (location.hostname.includes('github.io')) {
   document.body.classList.add('public-view');
 }
 
+if (location.hostname.includes('github.io')) {
+  document.body.classList.add('readonly');
+}
+</script>
 
 
 updateRace();
