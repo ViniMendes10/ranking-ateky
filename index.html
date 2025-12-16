@@ -385,7 +385,7 @@ header h1{
 }
 
 .public-view {
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .public-view header,
@@ -399,6 +399,16 @@ header h1{
 
 .readonly input.points {
   display: none;
+}
+/* 🔒 GITHUB PAGES — MOSTRAR PONTOS */
+.public-view .points-left,
+.readonly .points-left {
+  display: block;
+}
+
+/* Garantia extra */
+.public-view .rank-box {
+  opacity: 1;
 }
 
 
@@ -536,14 +546,8 @@ function togglePresentation(){
 
 // Se estiver no GitHub Pages, ativa modo somente leitura
 if (location.hostname.includes('github.io')) {
-  document.body.classList.add('public-view');
+  document.body.classList.add('public-view', 'readonly');
 }
-
-if (location.hostname.includes('github.io')) {
-  document.body.classList.add('readonly');
-}
-</script>
-
 
 updateRace();
 </script>
